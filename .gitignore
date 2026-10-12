@@ -1,0 +1,21 @@
+# Ignore environment variables and local runtime files
+.env
+.env.*
+!.env.example
+
+# Composer dependencies
+/vendor/
+
+# CI4 writable directories
+/writable/cache/
+/writable/logs/
+/writable/session/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# PHPUnit output
+.phpunit.result.cache
