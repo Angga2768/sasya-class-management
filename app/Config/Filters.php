@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Config;
+namespace Config;
 
-use CodeIgniter\Config\Filters as BaseFilters;
+use CodeIgniter\Config\BaseConfig;
 
-class Filters extends BaseFilters
+class Filters extends BaseConfig
 {
-    public array $aliases = [
+    public $aliases = [
         'csrf' => \CodeIgniter\Filters\CSRF::class,
         'toolbar' => \CodeIgniter\Filters\DebugToolbar::class,
         'auth' => \App\Filters\AuthFilter::class,
         'role' => \App\Filters\RoleFilter::class,
     ];
 
-    public array $filters = [
+    public $filters = [
         'before' => [
-            'auth' => ['except' => ['login', '/', 'logout']],
+            'auth' => ['except' => ['', 'login', 'logout', 'register', 'home']],
             'role' => ['before' => ['admin/*', 'student/*']],
         ],
     ];
